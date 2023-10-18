@@ -18,13 +18,42 @@
         <module>cetus-webapp</module>
     </modules>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.plugin.validation>DEFAULT</maven.plugin.validation>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
+            <!-- region  SpringBoot -->
+            <!-- 统一Spring组件版本 -->
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-framework-bom</artifactId>
                 <version>6.0.11</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-jdbc</artifactId>
+                <version>2.6.0</version>
+            </dependency>
+
+            <!-- region Mysql -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.33</version>
+            </dependency>
+
+            <!-- region Mybatis -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>3.5.3.1</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
