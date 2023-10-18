@@ -11,7 +11,7 @@
 
     <groupId>com.cetus</groupId>
     <artifactId>cetus-root</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -19,9 +19,10 @@
     </modules>
 
     <properties>
+        <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <maven.plugin.validation>DEFAULT</maven.plugin.validation>
     </properties>
 
@@ -44,14 +45,21 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
+                <scope>runtime</scope>
                 <version>8.0.33</version>
             </dependency>
 
             <!-- region Mybatis -->
             <dependency>
                 <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus</artifactId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>3.5.3.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.28</version>
             </dependency>
 
         </dependencies>
