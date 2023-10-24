@@ -1,7 +1,7 @@
-package com.cetus.mapper.base;
+package com.cetus.core.mapper.core;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.cetus.entity.base.SystemParam;
+import com.cetus.core.entity.SystemParam;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

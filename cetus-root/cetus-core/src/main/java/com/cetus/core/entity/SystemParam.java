@@ -1,16 +1,18 @@
-package com.cetus.entity.base;
+package com.cetus.core.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
+@Accessors(chain = true)
 @TableName("CETUS_SYSTEM_PARAM")
 public class SystemParam implements Serializable {
     @Serial
@@ -19,28 +21,23 @@ public class SystemParam implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     String id;
 
-    // 权限组名
     @TableField(value = "group_id")
     String groupId;
 
-    // 数据分组
     @TableField(value = "param_group_id")
     String paramGroupId;
 
-    @TableField(value = "param_group_name")
-    String paramGroupName;
-
     @TableField(value = "param_id")
     String paramId;
+
+    @TableField(value = "param_name")
+    String paramName;
 
     @TableField(value = "param_value")
     String paramValue;
 
     @TableField(value = "remark")
     String remark;
-
-    @TableField(value = "catalog")
-    String catalog;
 
     @TableField(value = "load_mode")
     String load_mode;
