@@ -6,6 +6,7 @@ public class InnerSystemParamUtils {
 
     public static String getParamValue(String paramGroupId, String paramId) {
         InnerSystemParamService instance = InnerSystemParamService.getInstance();
-        return instance.getValue(paramGroupId, paramId);
+        String value = instance.getValue(paramGroupId, paramId);
+        return value == null ? "" : value;
     }
 }
