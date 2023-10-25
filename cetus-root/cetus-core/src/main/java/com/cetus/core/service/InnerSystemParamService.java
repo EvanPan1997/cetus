@@ -2,31 +2,27 @@ package com.cetus.core.service;
 
 import com.cetus.core.entity.SystemParam;
 import com.cetus.core.mapper.core.SystemParamMapper;
-import com.cetus.core.util.ApplicationContextUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.LinkedHashMap;
 import java.util.List;
 
 @Slf4j
-@Service("innerSystemParamService")
-public class InnerSystemParamService implements InitializingBean {
+public class InnerSystemParamService {
+
     private static LinkedHashMap<String, LinkedHashMap<String, LinkedHashMap<String, String>>> systemParamMap = new LinkedHashMap<>();
 
     @Resource
     private SystemParamMapper systemParamMapper;
 
-    private InnerSystemParamService() {}
-
-    public static synchronized InnerSystemParamService getInstance() {
-        return (InnerSystemParamService) ApplicationContextUtil.getBean("innerSystemParamService");
+    public InnerSystemParamService() {
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
+    /**
+     * config类初始化方法
+     * */
+    private void init() {
         initSystemParamMap();
     }
 
@@ -78,4 +74,6 @@ public class InnerSystemParamService implements InitializingBean {
             }
         }
     }
+
+
 }
