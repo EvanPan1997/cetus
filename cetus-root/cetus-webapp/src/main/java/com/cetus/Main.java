@@ -7,7 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
-@PropertySource(value= "classpath:env/default/application.properties")
+//@PropertySource(value = "classpath:env/default/application.yaml", encoding = "UTF-8", factory = CetusPropertySourceFactory.class)
+@PropertySource(value = "classpath:env/default/application.properties")
 @MapperScans({
         @MapperScan("com.cetus.mapper"),
         @MapperScan("com.cetus.core.mapper")
