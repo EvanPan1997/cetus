@@ -17,6 +17,7 @@
     <modules>
         <module>cetus-webapp</module>
         <module>cetus-core</module>
+        <module>cetus-security</module>
     </modules>
 
     <properties>
@@ -25,6 +26,17 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <maven.plugin.validation>DEFAULT</maven.plugin.validation>
+
+        <spring-boot-bom.version>6.0.11</spring-boot-bom.version>
+        <spring-boot-jdbc.version>2.6.0</spring-boot-jdbc.version>
+        <spring-boot-jpa.version>2.5.4</spring-boot-jpa.version>
+        <spring-boot-data-redis.version>2.6.15</spring-boot-data-redis.version>
+        <jetbrains-annotations.version>24.0.1</jetbrains-annotations.version>
+
+        <mysql-connector.version>8.0.33</mysql-connector.version>
+        <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
+
+        <lombok.version>1.18.28</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -34,30 +46,30 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-framework-bom</artifactId>
-                <version>6.0.11</version>
+                <version>${spring-boot-bom.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-jdbc</artifactId>
-                <version>2.6.0</version>
+                <version>${spring-boot-jdbc.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-jpa</artifactId>
-                <version>2.5.4</version>
+                <version>${spring-boot-jpa.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-redis</artifactId>
-                <version>2.6.15</version>
+                <version>${spring-boot-data-redis.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.jetbrains</groupId>
                 <artifactId>annotations</artifactId>
-                <version>24.0.1</version>
+                <version>${jetbrains-annotations.version}</version>
             </dependency>
 
             <!-- region Mysql -->
@@ -65,20 +77,32 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <scope>runtime</scope>
-                <version>8.0.33</version>
+                <version>${mysql-connector.version}</version>
             </dependency>
 
             <!-- region Mybatis -->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>3.5.3.1</version>
+                <version>${mybatis-plus.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.28</version>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>0.11.5</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>2.0.37</version>
             </dependency>
 
         </dependencies>

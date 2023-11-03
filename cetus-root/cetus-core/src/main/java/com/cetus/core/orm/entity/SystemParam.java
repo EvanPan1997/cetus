@@ -1,4 +1,4 @@
-package com.cetus.core.entity;
+package com.cetus.core.orm.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Accessors(chain = true)
-@TableName("CETUS_SYSTEM_PARAM")
+@TableName("cetus_system_param")
 public class SystemParam implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;

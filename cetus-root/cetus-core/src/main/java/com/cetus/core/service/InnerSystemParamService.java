@@ -1,7 +1,7 @@
 package com.cetus.core.service;
 
-import com.cetus.core.entity.SystemParam;
 import com.cetus.core.mapper.core.SystemParamMapper;
+import com.cetus.core.orm.entity.SystemParam;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Resource;
