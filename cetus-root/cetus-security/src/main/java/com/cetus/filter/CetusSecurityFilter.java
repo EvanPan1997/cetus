@@ -1,33 +1,26 @@
 package com.cetus.filter;
 
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.filter.OncePerRequestFilter;
+import org.springframework.stereotype.Component;
 
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
 import java.io.IOException;
 
-public class CetusSecurityFilter extends OncePerRequestFilter {
+@Component
+public class CetusSecurityFilter implements Filter {
+
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-//        System.out.println(request.getRequestURI());
-//        System.out.println(request.getMethod());
+    public void init(FilterConfig filterConfig) throws ServletException {
+//        Filter.super.init(filterConfig);
+    }
 
-        // 非登录请求，不处理
-//        if ("/login".equals(request.getRequestURI()) && request.getMethod().equals(HttpMethod.POST.name())) {
-//            String username = request.getParameter("username");
-//            String password = request.getParameter("password");
-//            System.out.println("username:" + username);
-//            System.out.println("password:" + password);
-//        } else {
-//            System.out.println("非登录处理！");
-//        }
+    @Override
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
-        SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken("Evan", "", null));
-        filterChain.doFilter(request, response);
+    }
+
+    @Override
+    public void destroy() {
+//        Filter.super.destroy();
     }
 }

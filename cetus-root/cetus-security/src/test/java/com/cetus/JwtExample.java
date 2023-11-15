@@ -5,7 +5,7 @@ import io.jsonwebtoken.*;
 import java.util.Date;
 
 
-public class JwtTest {
+public class JwtExample {
 
     public static void main(String[] args) {
         String jwt = generate();
@@ -20,16 +20,22 @@ public class JwtTest {
                 .setIssuedAt(new Date()).setExpiration(new Date(System.currentTimeMillis() + 3600 * 1000))
                 .claim("username", "Evan");
 
-        String jwt = jwtBuilder.signWith(SignatureAlgorithm.HS256, secretKey).compact();
+        String jwt = jwtBuilder
+                .signWith(SignatureAlgorithm.HS256, secretKey)
+                .compact();
         System.out.println(jwt);
         return jwt;
     }
 
     public static void parse(String jwt) {
         try {
-            Jws<Claims> jws = Jwts.parser().setSigningKey("Cetus_2023").parseClaimsJws(jwt);
+            Jws<Claims> jws = Jwts.parser()
+                    .setSigningKey("Cetus_2023")
+                    .parseClaimsJws(jwt);
             Claims claims = jws.getBody();
+            System.out.println(jws.toString());
             System.out.println(claims.toString());
+            System.out.println(jws.getSignature());
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }

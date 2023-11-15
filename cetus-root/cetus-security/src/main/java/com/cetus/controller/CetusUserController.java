@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/user")
 @RestController
 public class CetusUserController {
+
+    /** 根据获取用户信息验证后发签 */
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserLoginDto userLoginDto) {
         return new ResponseEntity<>(null ,HttpStatus.OK);
